@@ -2,7 +2,9 @@
 
 ## Introduction
 
-> The small library is designed to help manage multiple connection pools when using the [Knex](https://github.com/tgriesser/knex) SQL builder library. Most often, the need for multiple connections arises when using a database that contains slaves that act as read-only replicas. With this library, you can register multiple Knex instances that are associated with a type: read or write. When you need to make a query, you can select to use a connection that is marked as either read or write, depending on the type of query you intend to execute. 
+> Designed to help manage multiple connection pools when using the [Knex](https://github.com/tgriesser/knex) SQL builder library. Most often, the need for multiple connections arises when using a database that contains slaves that act as read-only replicas. With this library, you can register multiple Knex instances that are associated with a type: read or write. When you need to make a query, you can select to use a connection that is marked as either read or write, depending on the type of query you intend to execute.
+
+> Ideally, this functionality would be moved into the Knex library, or perhaps even down further into the pooling library that Knex utilizing. Until then, this is a nice proof of concept for functionality.
 
 ## Usage
 
