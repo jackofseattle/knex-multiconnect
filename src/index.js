@@ -50,6 +50,18 @@ assign(KnexManager.prototype, {
 
     },
 
+    destroyReadInstances(){
+        this._connectionRegistry['read'].map((instance, _i) => {
+            instance.knex.destroy()
+        })
+    },
+
+    destroyWriteInstances(){
+        this._connectionRegistry['write'].map((instance, _i) => {
+            instance.knex.destroy()
+        })
+    },
+
     getReadInstance(){
         return this.getInstance('read')
     },
