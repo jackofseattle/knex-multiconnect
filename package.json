@@ -1,0 +1,29 @@
+{
+  "name": "knex-multiconnect",
+  "version": "0.1.0",
+  "description": "A library to manage multiple knex instances for integration with read replicas and master database instances",
+  "main": "main.js",
+  "author": {
+    "name": "Rich Dillon",
+    "web": "https://github.com/richraid21"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/richraid21/knex-multiconnect.git"
+  },
+  "license": "MIT",
+  "buildDependencies": [
+    "babel-cli",
+    "babel-preset-env"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "knex": "^0.13.0",
+    "pg": "^7.3.0"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "prepublish": "npm run build"
+  }
+}
