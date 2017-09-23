@@ -47,12 +47,20 @@ assign(KnexManager.prototype, {
                 instance.knex.destroy()
             })
         })
-        
+
     },
 
     getReadInstance(){
         return this.getInstance('read')
-    }, 
+    },
+
+    getUpdateInstance(){
+        return this.getWriteInstance()
+    },
+
+    getDeleteInstance(){
+        return this.getWriteInstance()
+    },
 
     getWriteInstance(){
         return this.getInstance('write')
@@ -64,6 +72,14 @@ assign(KnexManager.prototype, {
 
     write(){
         return this.getWriteInstance()
+    },
+
+    update(){
+        return this.getUpdateInstance()
+    },
+
+    delete(){
+        return this.getDeleteInstance()
     }
 })
 
